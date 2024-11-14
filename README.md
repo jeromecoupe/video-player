@@ -8,6 +8,8 @@ Progressively enhances a link wrapped around an image to an iframe.
 - does not load `<iframe>` elements during initial page load
 - relies on the light DOM
 
+[Here is a demo of it in action](https://jeromecoupe.github.io/video-player/)
+
 ## Parameters
 
 Use data attributes as parameters.
