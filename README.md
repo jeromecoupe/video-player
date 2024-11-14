@@ -12,7 +12,7 @@ Progressively enhances a link wrapped around an image to an iframe.
 
 ## Parameters
 
-Use data attributes as parameters.
+Uses data attributes as parameters.
 
 ## Mandatory parameters
 
@@ -22,4 +22,4 @@ Use data attributes as parameters.
 
 ## Optional parameters
 
-- `data-autoplay`: add this data attribute if you want the iframe to autoplay. Relies on URL parameters for each service.
+- `data-autoplay`: add this data attribute if you want the video to autoplay. Relies on URL parameters for each service.
