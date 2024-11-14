@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Minimal video player web component</title>
+    <link
+      rel="stylesheet"
+      href="css/styles.css" />
+    <script
+      type="module"
+      src="js/main.js"></script>
+  </head>
+
+  <body>
+    <video-player
+      title="Video: Responsive web design - Benjamin code"
+      data-video-provider="youtube"
+      data-video-id="gjrfVbTuWWY"
+      data-autoplay>
+      <a href="https://www.youtube.com/watch?v=gjrfVbTuWWY">
+        <img
+          src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?fit=crop&w=1024&h=576"
+          width="1024"
+          height="576"
+          loading="lazy"
+          decoding="async"
+          alt="" />
+      </a>
+    </video-player>
+
+    <video-player
+      title="Video: Above the Clouds - Vivien Hárshegyi"
+      data-video-provider="vimeo"
+      data-video-id="1002451021">
+      <a href="https://vimeo.com/1002451021">
+        <img
+          src="https://images.unsplash.com/photo-1730825447957-028c9e2efeba?fit=crop&w=1500&h=844"
+          width="1024"
+          height="576"
+          loading="lazy"
+          decoding="async"
+          alt="" />
+      </a>
+    </video-player>
+  </body>
+</html>
