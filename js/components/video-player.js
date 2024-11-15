@@ -57,6 +57,7 @@ class videoPlayer extends HTMLElement {
     const videoLink = this.querySelector("a");
 
     // check if we have a link, video ID
+    // check we have a provideer and that it is in the list
     if (!videoLink || !videoId) return;
     if (!allowedProviders.includes(provider)) return;
 
