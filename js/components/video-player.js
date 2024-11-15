@@ -10,6 +10,7 @@ class videoPlayer extends HTMLElement {
   }
 
   /**
+   * Build iframe
    *
    * @param {string} id - ID of the video
    * @param {string} provider - name of the provider
