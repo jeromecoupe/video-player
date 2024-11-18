@@ -14,11 +14,17 @@ Progressively enhances a link wrapped around an image to an iframe.
 
 Uses data attributes as parameters.
 
-## Mandatory parameters
+### Mandatory parameters
 
-- `title`: title attribute for the component.
 - `data-iframe-src`: the `src` of the iframe that is going to replace the link and image.
 
-## Optional parameters
+### Optional parameters
 
-All parameters of the embed `src` for the various services are available.
+All parameters of the embed `src` for the various services are available. `autoplay` comes to mind.
+
+### generated iframe
+
+The `iframe` has the following attributes
+
+- `allowfullscreen` set to true
+- `width` and `height` set to 1500 and 844 respectively (16 / 9 ratio)
