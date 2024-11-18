@@ -10,31 +10,14 @@ class videoPlayer extends HTMLElement {
   }
 
   /**
-   * Build iframe
+   * Create iframe element
    *
-   * @param {string} id - ID of the video
-   * @param {string} provider - name of the provider
-   * @param {number} autoplay - 1 or 0
-   * @returns {object} - iframe element with attributes
+   * @param {*} src - iframe source URL
+   * @returns iframe DOM node
    */
-  buildIframe(id, provider, autoplay) {
-    let iframeSrc = "";
-
-    // youtube
-    if (provider === "youtube") {
-      iframeSrc = new URL(`https://www.youtube-nocookie.com/embed/${id}`);
-      iframeSrc.searchParams.set("autoplay", autoplay);
-    }
-
-    // vimeo
-    if (provider === "vimeo") {
-      iframeSrc = new URL(`https://player.vimeo.com/video/${id}`);
-      iframeSrc.searchParams.set("dnt", true);
-      iframeSrc.searchParams.set("autoplay", autoplay);
-    }
-
+  createIframe(src) {
     const iframeEl = document.createElement("iframe");
-    iframeEl.src = iframeSrc;
+    iframeEl.src = src;
     iframeEl.allowFullscreen = true;
     iframeEl.width = 1500;
     iframeEl.height = 844;
@@ -48,22 +31,14 @@ class videoPlayer extends HTMLElement {
    * @returns void
    */
   connectedCallback() {
-    // config
-    const allowedProviders = ["youtube", "vimeo"];
-
-    // params
-    const provider = this.dataset.videoProvider.toLowerCase();
-    const videoId = this.dataset.videoId;
-    const autoplay = this.hasAttribute("data-autoplay") ? 1 : 0;
+    const iframeSrc = this.dataset.iframeSrc ?? "";
     const videoLink = this.querySelector("a");
 
-    // check if we have a link, video ID
-    // check we have a provideer and that it is in the list
-    if (!videoLink || !videoId) return;
-    if (!allowedProviders.includes(provider)) return;
+    // check variables are there
+    if (!iframeSrc || !videoLink) return;
 
-    // build iframe
-    const iframeEl = this.buildIframe(videoId, provider, autoplay);
+    // create iframe
+    const iframeEl = this.createIframe(iframeSrc);
 
     // click handler
     videoLink.addEventListener("click", (event) => {

@@ -16,10 +16,9 @@ Uses data attributes as parameters.
 
 ## Mandatory parameters
 
-- `title`: title attribute for the component
-- `data-video-provider`: must be "youtube" or "vimeo"
-- `data-video-id`: the id of the video
+- `title`: title attribute for the component.
+- `data-iframe-src`: the `src` of the iframe that is going to replace the link and image.
 
 ## Optional parameters
 
-- `data-autoplay`: add this data attribute if you want the video to autoplay. Relies on URL parameters for each service.
+All parameters of the embed `src` for the various services are available.
