@@ -1,7 +1,7 @@
 /**
  * A minimal <video-player> component
  *
- * - works for Youtube and Vimeo. Other video services using an iframe can be added.
+ * - works with any service using an iframe (Vimeo, Youtube, etc.)
  * - progressively enhances a link wrapped around an image into an iframe
  */
 class videoPlayer extends HTMLElement {
@@ -17,6 +17,7 @@ class videoPlayer extends HTMLElement {
    */
   createIframe(srcUrl) {
     const iframeEl = document.createElement("iframe");
+
     iframeEl.src = srcUrl;
     iframeEl.allowFullscreen = true;
     iframeEl.width = 1500;
@@ -31,6 +32,7 @@ class videoPlayer extends HTMLElement {
    * @returns void
    */
   connectedCallback() {
+    // get variables / DOM elements we need
     const iframeSrc = this.dataset.iframeSrc ?? "";
     const videoLink = this.querySelector("a");
 
