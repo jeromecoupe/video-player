@@ -16,7 +16,8 @@ Uses data attributes as parameters.
 
 ### Mandatory parameters
 
-- `data-iframe-src`: the `src` of the iframe that is going to replace the link and image.
+- a link and an image are required as content for the component to work
+- `data-iframe-src`: the `src` of the generated `iframe` that is going to replace the link and image.
 
 ### Optional parameters
 

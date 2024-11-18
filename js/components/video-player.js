@@ -12,12 +12,12 @@ class videoPlayer extends HTMLElement {
   /**
    * Create iframe element
    *
-   * @param {*} src - iframe source URL
+   * @param {string} srcUrl - iframe source URL
    * @returns iframe DOM node
    */
-  createIframe(src) {
+  createIframe(srcUrl) {
     const iframeEl = document.createElement("iframe");
-    iframeEl.src = src;
+    iframeEl.src = srcUrl;
     iframeEl.allowFullscreen = true;
     iframeEl.width = 1500;
     iframeEl.height = 844;
