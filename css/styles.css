@@ -1,69 +1,89 @@
+/* ==========================
+=player component
+========================== */
+
 video-player {
   display: block;
   aspect-ratio: 16 / 9;
   background-color: black;
 }
 
+/* ==========================
+=link
+========================== */
+
 video-player > a {
   position: relative;
   display: block;
-
-  &::before {
-    --width: 60px;
-    --height: 60px;
-
-    content: "";
-    position: absolute;
-    inset-block-start: calc(50% - (var(--height) / 2));
-    inset-inline-start: calc(50% - (var(--width) / 2));
-    z-index: 2;
-    width: var(--width);
-    height: var(--height);
-    pointer-events: none;
-
-    background-image: url(../img/icon_play.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    transition: scale 0.2s ease-out;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset-block-start: 0;
-    inset-block-end: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0;
-
-    transition: opacity 0.2s ease-out;
-  }
 }
 
-video-player > a:focus,
-video-player > a:hover {
-  &::before {
-    scale: 1.06;
-  }
+/* ==========================
+=play "button"
+========================== */
 
-  &::after {
-    opacity: 0.12;
-  }
+video-player a::before {
+  --inline-size: 60px;
+  --block-size: 60px;
+
+  content: "";
+  position: absolute;
+  inset-block-start: calc(50% - (var(--block-size) / 2));
+  inset-inline-start: calc(50% - (var(--inline-size) / 2));
+  z-index: 2;
+  inline-size: var(--inline-size);
+  block-size: var(--block-size);
+  pointer-events: none;
+
+  background-image: url(../img/icon_play.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: scale 0.2s ease-out;
+}
+
+video-player > a:focus::before,
+video-player > a:hover::before {
+  scale: 1.06;
+}
+
+/* ==========================
+=overlay
+========================== */
+
+video-player a::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-block-end: 0;
+  z-index: 1;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: black;
+  opacity: 0;
+
+  transition: opacity 0.2s ease-out;
+}
+
+video-player > a:focus::after,
+video-player > a:hover::after {
+  opacity: 0.12;
+}
+
+/* ==========================
+=image & iframe
+========================== */
+
+video-player img,
+video-player iframe {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 video-player img {
-  display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
 video-player iframe {
-  display: block;
   border: 0;
-  width: 100%;
-  height: 100%;
 }
